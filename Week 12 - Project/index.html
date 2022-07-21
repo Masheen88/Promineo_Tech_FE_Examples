@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CRUD with mockAPI</h1>
+    <!-- container to list all of the food items -->
+    <div id="food-container"></div>
+    <br />
+    <!-- add food from an input field on button press-->
+    <form id="add-food-form">
+      <input type="text" id="food-name" placeholder="Food Name" />
+      <button type="submit">Add Food</button>
+    </form>
+    <br />
+    <!-- delete food from an input field on button press-->
+    <form id="delete-food-form">
+      <input type="text" id="food-name-delete" placeholder="Food Name" />
+      <button type="submit">Delete Food</button>
+    </form>
+    <br />
+    <!-- update food from an input field on button press -->
+    <form id="update-food-form">
+      <input type="text" id="food-name-id" placeholder="Food Name ID" />
+      <input
+        type="text"
+        id="food-name-update-name"
+        placeholder="New Food Name"
+      />
+      <button type="submit">Update Food</button>
+    </form>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="crud.js"></script>
+  </body>
+</html>
