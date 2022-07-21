@@ -79,5 +79,5 @@ console.log("This is a new card deck:", newCardDeck.cards);
 // displays a specific faceValue object and cardValue object from the array of cards
 console.log(`
 This is a specific card value from my deck.
-  A ${newCardDeck.cards[1].faceValue} with a value of ${newCardDeck.cards[1].cardValue}
+  A ${newCardDeck.cards[1].faceValue} with a number value of ${newCardDeck.cards[1].cardValue}
 `);
