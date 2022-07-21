@@ -79,10 +79,12 @@ addFoodForm.addEventListener("submit", (e) => {
     foodName: foodName, //set the food name to the value of the food name from the form
   };
   console.log("CRUD Create - FoodGroup:", foodGroup);
+
   //createFoodGroup(foodGroup) returns a promise
   createFoodGroup(foodGroup).then((foodGroup) => {
     //createFoodGroup() returns a promise
     console.log("CRUD Create - FoodGroup:", foodGroup);
+
     //getFoodList() returns a promise
     getFoodList()
       .then((foodList) => {
@@ -113,10 +115,12 @@ deleteFoodForm.addEventListener("submit", (e) => {
     id: id, //set the food name to the value of the food name from the form
   };
   console.log("CRUD Delete - FoodGroup:", id);
+
   //deleteFoodGroup(foodGroup) returns a promise
   deleteFoodGroup(foodGroup).then((foodGroup) => {
     //deleteFoodGroup() returns a promise
     console.log("CRUD Delete - FoodGroup:", parseInt(foodGroup));
+
     //getFoodList() returns a promise
     getFoodList()
       .then((foodList) => {
@@ -150,10 +154,12 @@ updateFoodForm.addEventListener("submit", (e) => {
     foodName: foodName, //set the food name to the value of the food name from the form
   };
   console.log("CRUD Update - FoodGroup:", foodGroup);
+
   //updateFoodGroup(foodGroup) returns a promise
   updateFoodGroup(foodGroup).then((foodGroup) => {
     //updateFoodGroup() returns a promise
     console.log("CRUD Update - FoodGroup:", foodGroup);
+
     //getFoodList() returns a promise
     getFoodList()
       .then((foodList) => {
