@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id="message" class="alert alert-light" role="alert"></div>
+    <div class="buttonContainer container">
+      <div id="Btncenter">
+        <button id="btn" type="button" class="btn btn-light">Reset</button>
+      </div>
+    </div>
+
+
+    <h2 id="turn" class="display-1 container">Turn: X</h1>
+
+    <div value="null"></div>
+    <table id="grid"></table>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./tictactoe.js"></script>
+  </body>
+</html>
