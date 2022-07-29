@@ -1,0 +1,16 @@
+.pageContent {
+  margin: 0 auto; /* centers content */
+  text-align: center; /* centers text */
+}
+
+.contactForm {
+  width: 25%; /* 1/4 of the page width */
+  margin: auto; /* centers content */
+  border: 1px solid black; /* adds border to the form */
+}
+
+.contactTable {
+  width: 25%; /* 1/4 of the page width */
+  margin: auto; /* centers the table */
+  border: 1px solid black; /* adds a border to the table */
+}
