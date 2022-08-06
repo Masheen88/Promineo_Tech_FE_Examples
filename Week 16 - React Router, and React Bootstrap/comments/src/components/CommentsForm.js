@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import commentsAPI from "./rest_api/mainAPI";
 
 //export comments form
@@ -12,7 +11,7 @@ export default function CommentsForm({ setComments }) {
     // wait for postCommmment to finish
     setTimeout(() => {
       getComments();
-    }, 1000);
+    }, 500);
   };
 
   //get comments and update state

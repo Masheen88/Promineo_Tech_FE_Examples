@@ -32,6 +32,23 @@ class CommentsAPI {
     }
   };
 
+  deleteComment = async (comment) => {
+    console.log("deleting comment", comment);
+    try {
+      const resp = await fetch(COMMENTS_ENDPOINT + "/" + comment, {
+        method: "DELETE",
+      });
+      const data = await resp.json();
+      // console.log(data);
+      return data;
+    } catch (error) {
+      console.log(
+        "Oh no! There was an error with deleting your review.",
+        error
+      );
+    }
+  };
+
   //Send Request
   get = async () => {
     try {
