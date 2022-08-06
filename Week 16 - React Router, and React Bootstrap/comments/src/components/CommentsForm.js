@@ -1,34 +1,40 @@
-import React, { useCallback } from "react";
+import { useEffect } from "react";
 import commentsAPI from "./rest_api/mainAPI";
 
 //export comments form
-export default function CommentsForm(onCommentChange) {
+export default function CommentsForm({ setComments }) {
   // handle submit
   const handleSubmit = (event) => {
     event.preventDefault();
     const comment = event.target.comment.value;
     console.log("myComment:", comment);
     postComment(comment);
+    // wait for postCommmment to finish
+    setTimeout(() => {
+      getComments();
+    }, 1000);
   };
 
-  //useCallback to update onCommentChange state
-  const postComment = useCallback(
-    async (comment) => {
-      try {
-        const resp = await commentsAPI.postComment(comment);
-        console.log("resp:", resp);
-        const getResp = await commentsAPI.getComments();
-        console.log("getResp:", getResp);
-        return (onCommentChange = getResp);
-      } catch (error) {
-        console.log(
-          "Oh no! There was an error with posting your review.",
-          error
-        );
-      }
-    },
-    [onCommentChange]
-  );
+  //get comments and update state
+  const getComments = async () => {
+    console.log("getComments");
+    try {
+      const resp = await commentsAPI.getComments();
+      setComments(resp);
+    } catch (error) {
+      console.log("Oh no! There was an error with getting your review.", error);
+    }
+  };
+
+  // handleSubmit post comment
+  const postComment = async (comment) => {
+    try {
+      const response = await commentsAPI.postComment(comment);
+      console.log("postComment response:", response);
+    } catch (error) {
+      console.log("Oh no! There was an error with adding a review.", error);
+    }
+  };
 
   return (
     <div className="commentsForm">

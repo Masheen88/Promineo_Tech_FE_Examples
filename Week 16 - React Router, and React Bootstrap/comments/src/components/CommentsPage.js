@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import commentsAPI from "./rest_api/mainAPI";
 import CommentsForm from "./CommentsForm";
 
 function CommentsPage() {
   const [comments, setComments] = useState([]);
-  // get comments
+
   const getComments = async () => {
     try {
       const resp = await commentsAPI.getComments();
@@ -14,17 +14,17 @@ function CommentsPage() {
     }
   };
 
-  //useEffect if commentsAPI length has changed
+  //useEffect to get initial list of comments on page load
   useEffect(() => {
-    // return only one comment
     getComments();
-  }, [comments]);
+  }, []);
 
-  // get comments in return
+  // returns a list of comments
   return (
     <div className="commentsPage">
       <h1>Comments</h1>
-      <CommentsForm onCommentChange={setComments} />
+
+      <CommentsForm setComments={setComments} />
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>{comment.name}</li>
