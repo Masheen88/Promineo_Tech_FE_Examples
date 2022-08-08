@@ -14,7 +14,12 @@ class ContactList {
 
   //this deletes the contact from the array
   deleteContact(contact) {
+    console.log("display a contact to delete:", contact);
+
     let contactIndex = this.contacts.indexOf(contact); //this finds the index of the contact
+
+    console.log("displays the index of a contact contactIndex:", contactIndex);
+
     this.contacts.splice(contactIndex, 1); //this deletes the contact from the array
   }
 }
