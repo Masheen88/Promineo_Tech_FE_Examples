@@ -1,0 +1,13 @@
+body {
+  background-color: #51ff00; /* Green */
+}
+
+#title {
+  text-align: center; /* center the text */
+  color: #8000ff; /* change the color */
+}
+
+p {
+  text-align: center; /* center the text */
+  border: 5px solid #ff0000; /* border the paragraph */
+}
