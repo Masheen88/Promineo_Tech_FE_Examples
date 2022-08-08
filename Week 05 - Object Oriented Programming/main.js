@@ -1,9 +1,9 @@
 // A class of that represents a person.
 class Person {
   constructor(someName, someAge) {
-    this.name = someName;
-    this.age = someAge;
-    this.pet = [];
+    this.name = someName; // sets the name of the person
+    this.age = someAge; // sets the age of the person
+    this.pet = []; // sets the pet of the person
   }
 
   // A function that prints a greeting to the console.
@@ -24,7 +24,7 @@ class Person {
 
 class Pet {
   constructor(somePetName) {
-    this.petName = somePetName;
+    this.petName = somePetName; // sets the name of the pet
   }
 
   sayPetName() {
