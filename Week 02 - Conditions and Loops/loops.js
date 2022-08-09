@@ -2,7 +2,7 @@
 
 // Example 1: For Loop with Array
 console.log("Example 1: For Loop with Array");
-let myArrayOfNumbers = [1, 2, 3, 4, 5, 6, 9, 13, 17, 18, 23]; // Array of numbers
+let myArrayOfNumbers = [1, 2, 3, 36, -5, 4, 5, 6, 9, 13, 17, 18, 23]; // Array of numbers
 
 // This console log shows an array of numbers
 console.log("This is an array:", myArrayOfNumbers);
@@ -79,7 +79,12 @@ console.log(
 // Example 4: Switch Case with a Number
 console.log(`\n Example 4: Switch Case with a Number`);
 
-const expr = "Apples"; // expression is passed into the switch case
+const expr = "Oranges"; // expression is passed into the switch case
+
+// If this is my Banana tell me about it.
+function giveMeBananas() {
+  return console.log("You now have bananas"); // returns bananas in the console.
+}
 
 // Switch case to determine what is displayed based on the fruit selected.
 switch (expr) {
@@ -101,4 +106,21 @@ switch (expr) {
   // This is the default case if the expr is not equal to anything above.
   default:
     console.log(`Sorry, we are out of ${expr}.`);
+}
+
+// a switch statement to take fruit, if the fruit is mine, tell me about it.
+switch (expr) {
+  case "Bananas":
+    giveMeBananas(); // calls the giveMeBananas function
+    break;
+
+  case "Apples":
+    giveMeApples();
+    break;
+  default:
+    console.log(`These are not my fruits!, ${expr}.`);
+}
+
+function giveMeApples() {
+  return console.log("You now have apples");
 }
