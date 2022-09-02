@@ -23,17 +23,40 @@ class ParentComponent extends React.Component {
     this.setState({
       id: this.state.id + 1, //sets the state of id to the current id + 1
     });
+
+    console.log("Id before re-render +:", this.state.id); //logs id to console before re-rendering
+  }
+  decreaseId() {
+    this.setState({
+      id: this.state.id - 1, //sets the state of id to the current id - 1
+    });
+
+    console.log("Id before re-render -:", this.state.id); //logs id to console before re-rendering
+  }
+
+  deleteChild(child) {
+    console.log("child:", child); //logs child name to console
+    let newChildNames = this.state.childNames.filter(function (item) {
+      //filter childNames array to remove child
+      return item !== child; //returns all items that are not equal to child
+    });
+
+    this.setState({
+      childNames: newChildNames, //set state of childNames to newChildNames
+    });
   }
 
   render() {
-    console.log("Id:", this.state.id); //logs id to console
+    console.log("Id first and consequent re-renders:", this.state.id); //logs id to console after re-rendering
     return (
       <div>
         <h1>{this.state.parentName}</h1> {/* displays parent name */}
         <h2>{this.state.id}</h2> {/* displays id */}
-        <button onClick={() => this.increaseId()}>Increase Id</button>{" "}
+        <button onClick={() => this.increaseId()}>Increase Id +</button>
+        <button onClick={() => this.decreaseId()}>Decrease Id -</button>
         {/*button that increases id by 1 */}
         {/* push additional child to state array each time id is increased */}
+        <br />
         <button
           onClick={() =>
             this.setState({
