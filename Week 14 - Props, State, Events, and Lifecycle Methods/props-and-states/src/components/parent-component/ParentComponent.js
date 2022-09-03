@@ -79,6 +79,7 @@ class ParentComponent extends React.Component {
         {this.state.childNames.map((child, index) => {
           return (
             <ChildComponent
+              id={index}
               key={index}
               childName={child}
               parentName={this.state.parentName}
