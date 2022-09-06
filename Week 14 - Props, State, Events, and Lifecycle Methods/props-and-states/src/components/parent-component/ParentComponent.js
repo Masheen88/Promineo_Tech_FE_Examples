@@ -13,9 +13,14 @@ class ParentComponent extends React.Component {
     };
   }
 
+  arrayDataFromChild = [];
+
   //pass child name to child component
-  myFUnction(child) {
-    console.log("child:", child); //logs child name to console
+  myFunction(child, childID) {
+    console.log("child:", child, childID); //logs child name to console
+    this.arrayDataFromChild.push({ fromChild: child, fromChildID: childID }); //call deleteChild function
+
+    console.log(this.arrayDataFromChild);
   }
 
   //increase id by 1
@@ -83,7 +88,7 @@ class ParentComponent extends React.Component {
               key={index}
               childName={child}
               parentName={this.state.parentName}
-              myFUnction={(child) => this.myFUnction(child)}
+              myFunction={(child) => this.myFunction(child)}
             />
           );
         })}

@@ -7,6 +7,7 @@ class ChildComponent extends React.Component {
       parentName: this.props.parentName,
       childName: this.props.childName,
       myId: this.props.id,
+      myChildFunction: this.props.myFunction,
     };
   }
   render() {
@@ -15,6 +16,16 @@ class ChildComponent extends React.Component {
         <h1>This is passed from the {this.state.parentName} component</h1>
         <h2>{this.state.childName}</h2>
         <p>{this.state.myId}</p>
+        <button
+          onClick={() => {
+            this.state.myChildFunction({
+              child: this.state.childName,
+              childID: this.state.myId,
+            });
+          }}
+        >
+          Hello
+        </button>
       </div>
     );
   }
