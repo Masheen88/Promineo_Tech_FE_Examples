@@ -16,10 +16,22 @@ class ParentComponent extends React.Component {
   arrayDataFromChild = [];
 
   //pass child name to child component
-  myFunction(child, childID) {
-    console.log("child:", child, childID); //logs child name to console
-    this.arrayDataFromChild.push({ fromChild: child, fromChildID: childID }); //call deleteChild function
+  myFunction(childObject) {
+    //logs child name to console
+    console.log("child:", childObject);
 
+    //pushes child name to arrayDataFromChild
+    this.arrayDataFromChild.push({
+      fromChild: childObject.child,
+      fromChildID: childObject.childID,
+    });
+
+    //filters objects in arrayDataFromChild to remove duplicates
+    this.arrayDataFromChild = this.arrayDataFromChild.filter(
+      (v, i, a) => a.findIndex((t) => t.fromChild === v.fromChild) === i
+    );
+
+    //logs arrayDataFromChild to console
     console.log(this.arrayDataFromChild);
   }
 
@@ -56,6 +68,7 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>{this.state.parentName}</h1> {/* displays parent name */}
+        {this.arrayDataFromChild}
         <h2>{this.state.id}</h2> {/* displays id */}
         <button onClick={() => this.increaseId()}>Increase Id +</button>
         <button onClick={() => this.decreaseId()}>Decrease Id -</button>
