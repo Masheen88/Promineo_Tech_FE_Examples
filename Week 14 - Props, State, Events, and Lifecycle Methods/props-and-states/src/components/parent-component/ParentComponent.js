@@ -51,8 +51,9 @@ class ParentComponent extends React.Component {
     console.log("Id before re-render -:", this.state.id); //logs id to console before re-rendering
   }
 
+  // Deletes the child component from the state array
   deleteChild(child) {
-    console.log("child:", child); //logs child name to console
+    console.log("child deleted:", child); //logs child name to console
     let newChildNames = this.state.childNames.filter(function (item) {
       //filter childNames array to remove child
       return item !== child; //returns all items that are not equal to child

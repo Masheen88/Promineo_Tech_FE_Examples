@@ -15,8 +15,9 @@ export default function CommentsForm({ setComments }) {
 
     // wait for postCommmment to finish
     setTimeout(() => {
+      console.log("test");
       getComments(); //get new list of comments
-    }, 500); //wait 500ms before getting new list of comments
+    }, 125); //wait 500ms before getting new list of comments
   };
 
   //get comments and update state

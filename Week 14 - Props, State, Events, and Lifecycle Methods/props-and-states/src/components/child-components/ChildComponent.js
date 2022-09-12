@@ -26,6 +26,13 @@ class ChildComponent extends React.Component {
         >
           Hello
         </button>
+        <button
+          onClick={() => {
+            this.props.deleteChild(this.state.childName);
+          }}
+        >
+          Delete
+        </button>
       </div>
     );
   }

@@ -2,6 +2,7 @@
 
 // Example 1: For Loop with Array
 console.log("Example 1: For Loop with Array");
+
 let myArrayOfNumbers = [1, 2, 3, 36, -5, 4, 5, 6, 9, 13, 17, 18, 23]; // Array of numbers
 
 // This console log shows an array of numbers
