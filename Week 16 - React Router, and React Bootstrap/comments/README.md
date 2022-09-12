@@ -11,4 +11,4 @@ Here are two options:
      npm i react@17.0.2 react-dom@17.0.2 react-router-dom
 
   2. Use this as a base in your index.js
-     ReactDom.render(<h1>Your App</h1>, document.getElementById('root'))
+     ReactDom.render(<div>Your App</div>, document.getElementById('root'))
