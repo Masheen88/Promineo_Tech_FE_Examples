@@ -59,9 +59,9 @@ class PlayingCard {
 
 // class to define a deck of cards
 class CardDeck {
-  constructor(newCards) {
+  constructor(myNewCards) {
     // Creates a new array to hold all the cards
-    this.cards = newCards;
+    this.cards = myNewCards;
   }
 }
 

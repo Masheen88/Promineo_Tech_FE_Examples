@@ -7,8 +7,6 @@ class ParentComponent extends React.Component {
     this.state = {
       id: 0,
       parentName: "Parent",
-      // childName1: "Child1",
-      // childName2: "Child2",
       childNames: [],
     };
   }
@@ -103,6 +101,7 @@ class ParentComponent extends React.Component {
               childName={child}
               parentName={this.state.parentName}
               myFunction={(child) => this.myFunction(child)}
+              deleteChild={(child) => this.deleteChild(child)}
             />
           );
         })}
