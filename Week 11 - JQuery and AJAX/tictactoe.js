@@ -151,3 +151,8 @@ document.querySelectorAll("#grid td").forEach(
 btn.addEventListener("click", function () {
   location.reload(); //reloads the page
 });
+
+// btn Event Listener as an arrow function
+btn.addEventListener("click", () => {
+  // code here
+});
