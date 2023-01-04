@@ -10,6 +10,7 @@ class ChildComponent extends React.Component {
       myChildFunction: this.props.myFunction,
     };
   }
+
   render() {
     return (
       <div>
