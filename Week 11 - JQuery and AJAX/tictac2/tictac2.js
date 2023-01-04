@@ -6,7 +6,7 @@ const squares = document.querySelectorAll(".square"); //game board squares
 const winningCombinations = [
   [0, 1, 2],
   [3, 4, 5],
-  [6, 7, 8],
+
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
@@ -35,7 +35,7 @@ function randomTurn() {
 randomTurn();
 
 let gameState = Array(9).fill(null); // Creates an array and fills it with 9 null elements.
-
+console.log("gamestate test:", gameState);
 // Reset button
 reset.addEventListener("click", () => {
   gameState = Array(9).fill(null);
