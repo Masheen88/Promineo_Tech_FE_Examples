@@ -1,7 +1,11 @@
 import commentsAPI from "./rest_api/mainAPI";
+import { useState } from "react";
 
 //export comments form
 export default function CommentsForm({ setComments }) {
+  //create state for comment
+  const [comment, setComment] = useState("");
+
   // On submit of form, post comment to API and get new list of comments
   const handleSubmit = (event) => {
     event.preventDefault(); //prevent page from refreshing
@@ -12,12 +16,13 @@ export default function CommentsForm({ setComments }) {
     postComment(comment); //post comment to API
 
     event.target.comment.value = ""; //clears the form
+    //set
 
     // wait for postCommmment to finish
     setTimeout(() => {
       console.log("test");
       getComments(); //get new list of comments
-    }, 125); //wait 500ms before getting new list of comments
+    }, 250); //wait 250ms before getting new list of comments
   };
 
   //get comments and update state
@@ -40,7 +45,7 @@ export default function CommentsForm({ setComments }) {
       console.log("Oh no! There was an error with adding a review.", error);
     }
   };
-
+  console.log("comment:", comment);
   return (
     <div className="commentsForm">
       <h1>Add a Comment</h1>

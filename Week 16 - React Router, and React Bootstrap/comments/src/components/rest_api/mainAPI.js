@@ -1,5 +1,5 @@
 const COMMENTS_ENDPOINT =
-  "https://62cc7a298042b16aa7d0144e.mockapi.io/Promineo_Tech_API/comments";
+  "https://62cc7a298042b16aa7d0144e.mockapi.io/Promineo_Tech_API/comments/2";
 
 class CommentsAPI {
   //Send Request

@@ -4,7 +4,7 @@ import CommentsForm from "./CommentsForm";
 
 function CommentsPage() {
   const [comments, setComments] = useState([]);
-
+  const tempDino = [];
   const getComments = async () => {
     try {
       const resp = await commentsAPI.getComments(); //get comments from API
@@ -18,6 +18,8 @@ function CommentsPage() {
     event.preventDefault(); //prevent page from refreshing
     const deleteButtonId = event.target.value; //get comment value from form
     commentsAPI.deleteComment(deleteButtonId).then((response) => {
+      tempDino.push(response);
+      console.log("tempDino", tempDino);
       setComments([response]); //update state on CommentsPage
       getComments(); //get new list of comments
     });
